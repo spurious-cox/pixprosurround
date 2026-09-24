@@ -1,4 +1,4 @@
-# PixProSurround 1.7.3
+# PixProSurround 1.7.4
 
 Draws a smooth full-circle glow — a bubble — around a Pixelmator Pro layer.
 Pixelmator has no native outline glow of this kind; this builds one out of

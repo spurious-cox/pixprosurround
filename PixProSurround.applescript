@@ -72,7 +72,7 @@ property debugMode : false
 -- ============================================================
 property kPixIDs : {"com.apple.pixelmator", "com.pixelmatorteam.pixelmator.x"}
 
-property scriptVersion : "1.7.3"
+property scriptVersion : "1.7.4"
 
 -- ============================================================
 -- UPDATE CHECK (reports only, never downloads)
