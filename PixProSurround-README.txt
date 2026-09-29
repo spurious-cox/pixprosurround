@@ -9,7 +9,7 @@ Pro has no native outline-glow effect of this kind; the applet builds one
 out of many precisely offset, blurred copies of the source layer.
 
 Applet:   /Applications/PixProSurround.app
-Source:   ~/My_Applications/PixProSurround/PixProSurround.applescript
+Source:   PixProSurround.applescript in this repository
 Defaults: ~/.textsurround_defaults.plist
 
 
@@ -18,7 +18,9 @@ Defaults: ~/.textsurround_defaults.plist
 -----------------------------------------------------------------------------
 
     1. In Pixelmator Pro, select the one layer to surround. Text, shape
-       and image layers all work.
+       and image layers all work. It has to be at the TOP LEVEL of the
+       Layers list; if it is inside a group, drag it out first and move
+       the result back afterward.
 
     2. Run PixProSurround (/Applications/PixProSurround.app).
 
@@ -142,7 +144,7 @@ v1.4.0  (2026-08-10)
 v1.5.0  (2026-08-10)
     Read Me button. This README is now copied into the app bundle's own
     Contents/Resources at build time and opened via `path to resource`, so it
-    travels inside the app — nothing depends on ~/My_Applications or any other
+    travels inside the app — nothing depends on any
     external path. The button sits on the colour-picker entry prompt and returns you
     to the prompt after the Read Me opens.
 

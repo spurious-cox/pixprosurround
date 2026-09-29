@@ -1,6 +1,6 @@
 -- ============================================================
 -- PixProSurround.applescript
--- Version 1.4.0  (2026-06-25)
+-- Version 1.7.5  (2026-09-28)
 --
 -- New in 1.4.0: targets whichever Pixelmator build is actually in use,
 --   resolved at run time by bundle id (see pixTarget). Since the Creator
@@ -72,7 +72,7 @@ property debugMode : false
 -- ============================================================
 property kPixIDs : {"com.apple.pixelmator", "com.pixelmatorteam.pixelmator.x"}
 
-property scriptVersion : "1.7.4"
+property scriptVersion : "1.7.5"
 
 -- ============================================================
 -- UPDATE CHECK (reports only, never downloads)
@@ -288,8 +288,17 @@ tell application pixApp
 	activate
 	tell front document
 		
+		-- A layer inside a group reports its index within that GROUP, but
+		-- every step below addresses the document's top-level layers, so it
+		-- would copy the wrong layer. Refuse it instead.
+		set layerIsNested to false
+		try
+			if class of (parent of current layer) is group layer then set layerIsNested to true
+		end try
 		if not (count selected layers) = 1 then
 			display alert "Make sure a single layer is selected."
+		else if layerIsNested then
+			display alert "That layer is inside a group." message "PixProSurround works on layers at the top level of the Layers list. Drag the layer out of its group to the top level, run PixProSurround again, then move the result back wherever you like."
 		else
 			
 			-- ── Record original layer info ─────────────────────────────────

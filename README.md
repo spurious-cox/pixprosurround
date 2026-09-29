@@ -18,6 +18,8 @@ the app binds to whichever one is in front or has a document open.
 ## Using it
 
 1. Select the one layer to surround. Text, shape and image layers all work.
+   It has to be at the **top level** of the Layers list; if it is inside a
+   group, drag it out first and move the result back afterward.
 2. Run PixProSurround.
 3. Pick the two gradient colors. The picker opens twice: **start** (innermost)
    then **end** (outermost). The eyedropper samples anything on screen.
@@ -46,10 +48,8 @@ start color to the end color across the stack.
 osacompile -o /tmp/PixProSurround.scpt PixProSurround.applescript
 ```
 
-Signing uses a Developer ID certificate selected by SHA-1 hash and timestamped,
-which is what keeps macOS's Automation grant alive across rebuilds.
-`~/My_Applications/_signing/pixpro_release.sh all <App>` signs and notarizes;
-`pixpro_publish.sh <App>` wraps it in the DMG and updates the cask.
+The app is signed with a timestamped Developer ID certificate, which keeps
+macOS's Automation grant alive across rebuilds, then notarized and stapled.
 
 ## Problems or suggestions
 
