@@ -55,6 +55,10 @@ macOS's Automation grant alive across rebuilds, then notarized and stapled.
 
 Open an issue: https://github.com/spurious-cox/pixprosurround/issues
 
+## Trademarks
+
+Pixelmator and Pixelmator Pro are trademarks of the Pixelmator Team Ltd. PixPro apps are independent and are not affiliated with, endorsed by or sponsored by Pixelmator or Apple.
+
 ## License
 
 MIT. See [LICENSE](LICENSE).
